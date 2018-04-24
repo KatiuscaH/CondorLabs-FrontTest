@@ -1,0 +1,18 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-content: start;
+}
+
+.wrap-content {
+    width: 100%;
+    max-width: 80%;
+}
+
+.wrap-content .formInitial {
+    margin-top: 32px;
+}
+
+.wrap-content table {
+    margin-top: 16px;
+}

@@ -1,20 +1,72 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="wrap">
 
+  <div class="wrap-content">
+
+    <form class="formInitial">
+
+      <div class="form-row">
+
+        <div class="col">
+          <input type="date" class="form-control" placeholder="username" name="start" [(ngModel)]="callParams.start" required autofocus/>
+        </div>
+        <div class="col">
+          <input type="date" class="form-control" placeholder="password" name="end" [(ngModel)]="callParams.end" required/>
+        </div>
+
+        <div class="col">
+          <select class="form-control" name="code" id="" [(ngModel)]="callParams.code">
+            <option value="" selected>All</option>
+            <option value="FL">FL</option>
+            <option value="OH">OH</option>
+            <option value="GA">GA</option>
+            <option value="LA">LA</option>
+          </select>
+        </div>
+
+        <div class="col-sm-2">
+          <button class="btn btn-primary btn-block btn-round" (click)="call()">Ingresar</button>
+        </div>
+
+      </div>
+
+    </form>
+
+    <table class="table table-bordered" id="myTable">
+
+      <thead>
+
+        <th>State</th>
+        <th>pro Code</th>
+        <th>Profession</th>
+        <th>Licence ID</th>
+        <th>Cycle​ ​End​ ​Date</th>
+        <th>Compliance​ ​Status</th>
+        <th>Client ID</th>
+        <th>Start​ ​Log​ ​Date</th>
+        <th>End​ ​Log​ ​Date</th>
+        <th>Environment</th>
+        <th>Machine</th>
+
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let row of data " class="font-weight-light">
+              <td> {{row.cd_cebroker_state}} </td>
+              <td> {{row.pro_cde}} </td>
+              <td> {{row.cd_profession}} </td>
+              <td> {{row.id_license}} </td>
+              <td> {{row.dt_end}} </td>
+              <td> {{row.ds_compl_status_returned}} </td>
+              <td> {{row.id_client_nbr}} </td>
+              <td> {{row.dt_Start_Log}} </td>
+              <td> {{row.dt_end_log}} </td>
+              <td> {{row.cd_environment}} </td>
+              <td> {{row.cd_machine}} </td>
+            </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
